@@ -8,7 +8,6 @@ package gestioneappartamenti;
 
 import javax.swing.JOptionPane;
 
-
 /**
  * 
  * @author utente Annunziata Carmine
@@ -21,6 +20,7 @@ public class TestAppartamenti {
      * @param args args
      * 
      */
+    
     
     public static void main(String[] args){
         // TODO code application logic here

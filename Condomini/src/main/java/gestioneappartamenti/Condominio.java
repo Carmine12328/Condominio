@@ -58,6 +58,9 @@ public class Condominio implements Serializable{
             condominio_app[i].setPropName(nome);
             condominio_app[i].setnPers(nPers);
             condominio_app[i].setCognome(cognome);
+            
+            DbConnect connect = new DbConnect();
+            connect.alterData(i, nome, nPers, cognome);
         }
     /**
      * Controlla che l'appartamento che si vuole occupare non sia già occupato

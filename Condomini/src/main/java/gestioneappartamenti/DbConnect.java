@@ -54,16 +54,16 @@ public class DbConnect {
         }
     }
         
-    public void insertData(){
+    public void alterData(int i,String nome,int nPers,String cognome){
         try {
-            String query = "insert into allievo (CF, Nome, Cognome, Eta)" + "values (?, ?, ?, ?)";
+            String query = "update info_condominio set nome=?, cognome=?, numero_inquilini=? where numero_appartamento=?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString (1, "MLLSMN67P65Z404U");
-            preparedStmt.setString (2, "Rubble");
-            preparedStmt.setString (3, "Luigio");
-            preparedStmt.setInt (4, 25);
+            preparedStmt.setString (1, nome);
+            preparedStmt.setString (2, cognome);
+            preparedStmt.setInt(3, nPers);
+            preparedStmt.setInt (4, i);
             
-            preparedStmt.execute();
+            preparedStmt.executeUpdate();
             
         } catch (SQLException ex) {
             Logger.getLogger(DbConnect.class.getName()).log(Level.SEVERE, null, ex);
